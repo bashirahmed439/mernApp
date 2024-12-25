@@ -4,7 +4,7 @@ const mongouri = "mongodb://localhost:27017";
 const connectToMongo =async () =>{
 
     try {
-      var result =  await mongoose.connect('mongodb://127.0.0.1:27017/bashir');
+      var result =  await mongoose.connect('mongodb://127.0.0.1:27017/inotebook');
         console.log('Database Connected Successfully!');
       } catch (error) {
         console.log(error);
