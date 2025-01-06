@@ -1,11 +1,20 @@
-
-import './App.css';
-
+import "./App.css";
+import { BrowserRouter, Routes , Route } from "react-router-dom";
+import CustomNavigation from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
 function App() {
   return (
-    <div className="App">
-      <h1>This is full fledge mern app</h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <CustomNavigation></CustomNavigation>
+        <Routes>
+          <Route path="/" Component={Home} />
+          <Route path="/about" Component={About} />
+          
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
