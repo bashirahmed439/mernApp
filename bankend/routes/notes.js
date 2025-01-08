@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 var fetchusertoken = require("../middleware/mwauth");
 const Notes = require("../models/Notes");
-const NotesValidatoinRules = require("../validation/notes.validation");
+const NotesValidatoinRules = require("../validators/notes.validation");
 const { body, validationResult } = require("express-validator");
 
 router.get("/fetchallnotes", fetchusertoken, async (req, res) => {

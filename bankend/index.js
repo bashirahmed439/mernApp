@@ -10,5 +10,5 @@ app.use('/api/auth',require('./routes/auth'))
 app.use('/api/notes',require('./routes/notes'));
 
 app.listen(port,()=>{
-    console.log("Application is listening at Port : " + port)
+    console.log("INoteBook Backend listening at http://localhost:" + port)
 })

@@ -5,7 +5,7 @@ const User = require("../models/User");
 const { body, validationResult } = require("express-validator");
 const Common = require("../models/common.model"); // Correct path to common.model.js
 const bcryptjs = require("bcryptjs");
-const UserValidatoinRules = require("../validation/user.validations");
+const UserValidatoinRules = require("../validators/user.validations");
 const fetchusertoken = require("../middleware/mwauth");
 const jwt = require("jsonwebtoken");
 // Route to create a new user
