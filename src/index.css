@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.navbaritem{
+  border: 1px solid #ede8e8;
+  border-left: 0px;
+  border-right: 0px;
+}

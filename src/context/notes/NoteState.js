@@ -1,23 +1,52 @@
-import React, { useState } from "react";
-import NoteContext from "./noteContext";
-const NoteState = (props) => {
-  const s1 = {
-    name: "Bashir",
-    class: "Ist",
-  };
-  const [state, setState] = useState(s1);
+import React, {useState } from 'react'
+import NoteContext from './noteContext'
 
-  const update = () => {
-    setTimeout(() => {
-      setState({
-        name: "Ahmed Khan",
-        class: "3rd",
-      });
-    }, 1000);
-  };
 
-  return (
-    <NoteContext.Provider value={{state ,update}}>{props.children}</NoteContext.Provider>
-  );
-};
+const NoteState =(props)=>{
+    const s1 = [{
+        "name": "hania1",
+        "email": "bashiruuu1hh@gmail.com",
+        "password": "1112222",
+      
+      },
+      {
+      
+        "name": "hania1ssssssssssssssss",
+        "email": "bashihh@gmail.com",
+        "password": "1112222",
+      },
+      {
+      
+        "name": "hania1ssssssssssssssss",
+        "email": "bashihh@gmail.com",
+        "password": "1112222",
+      },
+      {
+      
+        "name": "hania1ssssssssssssssss",
+        "email": "bashihh@gmail.com",
+        "password": "1112222",
+      },
+      {
+      
+        "name": "hania1ssssssssssssssss",
+        "email": "bashihh@gmail.com",
+        "password": "1112222",
+      },
+      {
+      
+        "name": "hania1ssssssssssssssss",
+        "email": "bashihh@gmail.com",
+        "password": "lorem",
+      }]
+
+
+      const [notes, setNotes] = useState(s1);
+    return(
+            <NoteContext.Provider value={{notes,setNotes}}>
+                {props.children}
+            </NoteContext.Provider>
+    )
+}
 export default NoteState;
+

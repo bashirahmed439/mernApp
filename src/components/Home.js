@@ -1,9 +1,9 @@
-import React from 'react'
-
+import React, { useContext } from "react";
+import { Notes } from "../components/Notes";
 export default function Home() {
   return (
     <div>
-      <h1>this is home</h1>
+      <Notes />
     </div>
-  )
+  );
 }
