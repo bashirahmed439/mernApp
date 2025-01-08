@@ -88,7 +88,7 @@ router.post(
           id: user.id,
         },
       };
-      const authtoken = jwt.sign(data, process.env.JWT_SECRET_KEY);
+      const authtoken = jwt.sign(data, 'THISISSECRETTOKEN123');
       success = true;
       res.json({ success, authtoken});
     } catch (error) {

@@ -16,3 +16,6 @@ code {
   border-left: 0px;
   border-right: 0px;
 }
+i{
+  cursor: pointer;
+}

@@ -4,11 +4,11 @@ export const AddNote = () => {
   const context = useContext(noteContext);
   const { AddNote } = context;
 
-  const [note, setNote] = useState({ name: "", email: "", password: "" });
+  const [note, setNote] = useState({ title: "",description: "", tag: "" });
 
   const handleClick = (e) => {
     e.preventDefault();
-    AddNote(note.name,note.email,note.password);
+    AddNote(note.title,note.description,note.tag);
   };
 
   const onChange = (e) => {
@@ -20,52 +20,40 @@ export const AddNote = () => {
       <h1>Add a Note</h1>
       <form>
         <div className="mb-3">
-          <label htmlFor="name" className="form-label">
+          <label htmlFor="title" className="form-label">
             Name
           </label>
           <input
-            name="name"
+            name="title"
             type="text"
             className="form-control"
-            id="name"
+            id="title"
             onChange={onChange}
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            Email address
-          </label>
-          <input
-            name="email"
-            type="email"
-            className="form-control"
-            id="email"
-            aria-describedby="emailHelp"
-            onChange={onChange}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">
+          <label htmlFor="description" className="form-label">
             Description
           </label>
           <input
-            name="password"
-            type="password"
+            name="description"
             className="form-control"
-            id="password"
+            id="description"
             onChange={onChange}
           />
         </div>
-        <div className="mb-3 form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="exampleCheck1"
-          />
-          <label className="form-check-label" htmlFor="exampleCheck1">
-            Check me out
+        <div className="mb-3">
+          <label htmlFor="tag" className="form-label">
+            Description
           </label>
+          <input
+            name="tag"
+            className="form-control"
+            id="tag"
+            onChange={onChange}
+          />
         </div>
+        
         <button type="submit" onClick={handleClick} className="btn btn-primary">
           Submit
         </button>

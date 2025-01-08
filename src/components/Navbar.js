@@ -1,17 +1,8 @@
-
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 
 function CustomNavigation() {
-
   const location = useLocation();
-
-  useEffect(()=>{
-    console.log(location.pathname)
-  },[location])
-  
-
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
@@ -30,9 +21,7 @@ function CustomNavigation() {
         <li className="nav-item">
           <a className={`nav-link ${location.pathname==="/pricing" ? "active" : ""}`} href="/pricing">Pricing</a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+       
       </ul>
     </div>
   </div>

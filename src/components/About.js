@@ -11,7 +11,7 @@ export default function About() {
   })
   return (
     <div>
-      <h1>this is about page{a.state.name} and class is {a.state.class}</h1>
+      <h1>this is about page{a.state.title} and class is {a.state.description}</h1>
     </div>
   )
 }
