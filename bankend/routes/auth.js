@@ -11,6 +11,7 @@ const jwt = require("jsonwebtoken");
 // Route to create a new user
 router.post("/", UserValidatoinRules.rule("SaveUser"), async (req, res) => {
   // Check for validation errors
+  let success = false;
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({ errors: errors.array() });
@@ -23,7 +24,7 @@ router.post("/", UserValidatoinRules.rule("SaveUser"), async (req, res) => {
       console.log(user.name);
       return res
         .status(400)
-        .json({ error: "Sorry, A user with this email already exists." });
+        .json({ success, error: "Sorry, A user with this email already exists." });
     }
 
     const salt = await bcryptjs.genSalt(10);
@@ -38,12 +39,12 @@ router.post("/", UserValidatoinRules.rule("SaveUser"), async (req, res) => {
 
     // Use the Common.insert method to insert the user
     await Common.insert(userData, User, req.body.name);
-
+    success= true;
     // Send a response with the newly created user
-    res.json(userData); // You can modify this to send back a successful response or the actual user
+    res.json({success,userData}); // You can modify this to send back a successful response or the actual user
   } catch (err) {
     console.error(err.message);
-    res.status(500).json({
+    res.status(500).json({success,
       message: err.message,
     });
   }
@@ -71,7 +72,7 @@ router.post(
         success = false;
         return res
           .status(400)
-          .json({ error: "Please try to login with correct credentials" });
+          .json({success, error: "Please try to login with correct credentials" });
       }
 
       const passwordCompare = await bcryptjs.compare(password, user.password);

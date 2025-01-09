@@ -5,6 +5,8 @@ import Home from "./components/Home";
 import About from "./components/About";
 import NoteState from "./context/notes/NoteState";
 import { Alert } from "./components/Alert";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 function App() {
   return (
     <>
@@ -16,6 +18,8 @@ function App() {
           <Routes>
             <Route path="/" Component={Home} />
             <Route path="/about" Component={About} />
+            <Route path="/login" Component={Login} />
+            <Route path="/signup" Component={SignUp} />
           </Routes>
         </BrowserRouter>
       </NoteState>
