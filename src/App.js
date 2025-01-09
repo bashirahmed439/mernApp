@@ -8,6 +8,7 @@ import { Alert } from "./components/Alert";
 function App() {
   return (
     <>
+
       <NoteState>
         <BrowserRouter>
         <Alert message="this is test message"/>
