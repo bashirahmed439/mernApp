@@ -33,7 +33,9 @@ const navigate = useNavigate();
   };
 
   return (
-    <div className="container">
+    <div className="container mt-2">
+      <h1>Create an account to use INoteBook</h1>
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="email">Name</label>
@@ -73,7 +75,7 @@ const navigate = useNavigate();
           />
         </div>
         <div className="form-group">
-          <label htmlFor="cpassword">Password</label>
+          <label htmlFor="cpassword">Confirm Password</label>
           <input
             value={creds.cpassword}
             type="password"
