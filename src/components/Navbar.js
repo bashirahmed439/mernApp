@@ -1,7 +1,15 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function CustomNavigation() {
   const location = useLocation();
+  const navigate = useNavigate();
+const handleLogout=()=>{
+
+
+  localStorage.removeItem("token");
+navigate("/login")
+}
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -53,11 +61,18 @@ function CustomNavigation() {
               </a>
             </li>
           </ul>
-          <form className="d-flex">
-           
-          <a className="btn btn-primary mx-2" href="/login" role="button">Login</a>
-          <a className="btn btn-primary" href="/signup" role="button">Sign Up</a>
-          </form>
+          {!localStorage.getItem("token") ? (
+            <form className="d-flex">
+              <a className="btn btn-primary mx-2" href="/login" role="button">
+                Login
+              </a>
+              <a className="btn btn-primary" href="/signup" role="button">
+                Sign Up
+              </a>
+            </form>
+          ) : (
+            <button className="btn btn-primary" onClick={handleLogout}> Logout </button>
+          )}
         </div>
       </div>
     </nav>

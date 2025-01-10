@@ -14,7 +14,7 @@ const Login = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
+        body: JSON.stringify({
         email: credentials.email,
         password: credentials.password,
       }),
@@ -23,6 +23,7 @@ const Login = () => {
     if (json.success) {
       // Save the auth token and redirect
       localStorage.setItem("token", json.authtoken);
+      localStorage.setItem("name", json.name)
       navigate("/");
     } else {
       alert("Invalid credentials");
@@ -36,10 +37,11 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-2">
+      <h1>Sign in to use InoteBook</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">Email</label>
           <input
             value={credentials.email}
             type="email"
